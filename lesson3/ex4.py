@@ -34,7 +34,7 @@ class ShoppingList:
 #    - True
 #    - False
 
-    def obj_comparison(self, compare_obj: object) -> bool:
+    def obj_comparison(self, compare_obj: object) -> str:
         if self.shopping_list == compare_obj.shopping_list:
             return f"Both the list are identical : {self.shopping_list}"
         return "There is a difference between shopping list {} and {}".format(self.shopping_list, compare_obj.shopping_list)
