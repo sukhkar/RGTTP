@@ -36,8 +36,8 @@ class ShoppingList:
 
     def obj_comparison(self, compare_obj: object) -> bool:
         if self.shopping_list == compare_obj.shopping_list:
-            return True
-        return False
+            return f"Both the list are identical : {self.shopping_list}"
+        return "There is a difference between shopping list {} and {}".format(self.shopping_list, compare_obj.shopping_list)
 
 # Create the shopping list object with list of items
 shopping_obj: object = ShoppingList(['apples', 'milk', 'bread', 'carrot', 'pasta'])
