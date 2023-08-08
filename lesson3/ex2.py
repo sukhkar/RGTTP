@@ -7,9 +7,10 @@
 # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 def create_list(number: int) -> list:
-    number_list: list = []
-    for i in range(number):
-        number_list.append(i)
+    
+    number_list: list = [i for i in range(number)]
+    #for i in range(number):
+    #    number_list.append(i)
     return number_list
 
 print(create_list(10))
@@ -19,9 +20,9 @@ print(create_list(10))
 # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 
 def create_list(number: int) -> list:
-    number_list: list = []
-    for i in range(number):
-        number_list.append(i**2)
+    number_list: list = [pow(i, 2) for i in range(number)]
+    #for i in range(number):
+    #    number_list.append(i**2)
     return number_list
 
 print(create_list(10))
@@ -34,9 +35,9 @@ print(create_list(10))
 #  [9, 81, 729]]
 
 def create_list(number: int) -> list:
-    number_list: list = []
-    for i in range(number):
-        number_list.append([i, i**2, i**3])
+    number_list: list = [[i, pow(i, 2), pow(i, 3)] for i in range(number)]
+    #for i in range(number):
+    #    number_list.append([i, i**2, i**3])
     return number_list
 
 print(create_list(10))
@@ -46,10 +47,10 @@ print(create_list(10))
 # [[1, 1, 1], [3, 9, 27], [5, 25, 125], [7, 49, 343], [9, 81, 729]]
 
 def create_list(number: int) -> list:
-    number_list: list = []
-    for i in range(number):
-        if i%2:
-            number_list.append([i, i**2, i**3])
+    number_list: list = [[i, pow(i, 2), pow(i, 3)] for i in range(number) if i%2]
+    #for i in range(number):
+    #    if i%2:
+    #        number_list.append([i, i**2, i**3])
     return number_list
 
 print(create_list(10))
@@ -64,12 +65,12 @@ alphabets: str = "abcde"
 
 
 def build_nested_list(add_str: str, alphabets: str) -> list:
-    updated_list: list = []
-    for i in add_str:
-        nested_list: list = []
-        for j in alphabets:
-            nested_list.append(j+i)
-        updated_list.append(nested_list)
+    updated_list: list = [[j+i for j in alphabets] for i in add_str]
+    #for i in add_str:
+    #    nested_list: list = []
+    #    for j in alphabets:
+    #        nested_list.append(j+i)
+    #    updated_list.append(nested_list)
     return updated_list
 
 print(build_nested_list(add_str, alphabets))

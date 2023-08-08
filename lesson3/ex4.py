@@ -34,8 +34,20 @@ class ShoppingList:
 #    - True
 #    - False
 
+    def obj_comparison(self, compare_obj: object) -> bool:
+        if self.shopping_list == compare_obj.shopping_list:
+            return True
+        return False
 
+# Create the shopping list object with list of items
 shopping_obj: object = ShoppingList(['apples', 'milk', 'bread', 'carrot', 'pasta'])
+other_shop_obj: object = ShoppingList(['apple', 'milk', 'bread', 'carrot', 'pasta'])
 
+# Check if item present on shopping list
 print(shopping_obj.in_list("apples"))
+
+#Print the shopping list output
 print(shopping_obj.show_shopping_list())
+
+# Compare the shopping list object with another shopping list of object
+print(shopping_obj.obj_comparison(other_shop_obj))
