@@ -44,13 +44,16 @@ print("There are {} {} in the shopping list".format(number_carrots, 'carrot'))
 
 try:
     choco_index = shopping_list.index('chocolate')
-    print("Chocolate is in {} postion in shopping list...!!!".format(choco_index))
+    print("Chocolate is in {} postion in shopping list...!!!".
+          format(choco_index))
 except ValueError as e:
     print(e)
 
 # 9. Get the index of carrot, make sure this code is executed
 
 item: str = "apples"
+item = 0
+
 
 def find_item_index(item: str) -> list:
     index_item: list = []
@@ -58,6 +61,7 @@ def find_item_index(item: str) -> list:
         if shopping_list[i] == item:
             index_item.append(i)
     return index_item
+
 
 indices: list[int] = find_item_index(item)
 if indices:
